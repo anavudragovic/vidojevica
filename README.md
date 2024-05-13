@@ -5,6 +5,7 @@
 Both reduce_v10.py and reduce_v10_astrometry.py reduce CCD images taken with Milankovic telescope mounted at the Astronomical Station Vidojevica. The difference is in obtaining the astrometrical solution: the first one uses python package twirl and the second one uses external sowtware Astrometry. 
 
 Three folders are created in the parent folder: 
+
     1. calibrated # To store calibrated images
     2. astrometry # To store astrometrically solved calibrated images
     3. photometry # To store output tables with measured photometry
