@@ -1,16 +1,18 @@
 # vidojevica
 
+ reduce_v10.py and reduce_v10_astrometry.py
 
-Both reduce_v10.py and reduce_v10_astrometry.py reduce CCD images taken with Milankovic telescope mounted at the Astronomical Station Vidojevica. The difference is in obtaining the astrometrical solution: the first one uses python package twirl and the second one uses external sowtware Astrometry. After proper calibration of scientific frames, photometry is measured using Photutils package defining apertures by either the fixed FWHM or the FWHM that can vary from image to image. The keyword ifFWHMvariable=False for xied value of FWHM and ifFWHMvariable=True to enable variation on FWHM. Defects like cosmic rays and hot/dead pixels are removed if ifBadPixels=True or ifBadPixel=False the correction is omitted (default value).
+Both reduce_v10.py and reduce_v10_astrometry.py reduce CCD images taken with Milankovic telescope mounted at the Astronomical Station Vidojevica. The difference is in obtaining the astrometrical solution: the first one uses python package twirl and the second one uses external sowtware Astrometry. 
 
-    calibFolderNm = "./calibrated"
-    astroFolderNm = "./astrometry"
-    photoFolderNm = "./photometry"
-    ifPauseProcess = True          # pause processes while doAstrometry() for CPU
-    ifPlotPhotApertures = False     # imshow() aperture for visual check (True); or save jpg (False)
-    ifFWHMvariable=False
-    ifPlotCalibratedFrames = False
-    ifBadPixels=False
+Three folders are created in the parent folder: 
+   1. calibrated # To store calibrated images
+   2. astrometry # To store astrometrically solved calibrated images
+   3. photometry # To store output tables with measured photometry
+
+After proper calibration and obtained WCS solutions, photometry is measured using Photutils package defining apertures by either the fixed FWHM or the FWHM that can vary from image to image in the following way: aperture radius is 2.8*FWHM, annulus radius starting 5 pixels away from the aperture radius and spanning for 10 pixels. 
+
+    ifFWHMvariable=False # for fixied value of FWHM and ifFWHMvariable=True to enable variation on FWHM
+    ifBadPixels=False # Defects like cosmic rays and hot/dead pixels are removed if ifBadPixels=True or ifBadPixel=False the correction is omitted (default value).
 
 --------------------------------------------------------------------------------------------------
 
