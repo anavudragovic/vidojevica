@@ -13,10 +13,15 @@ Three folders are created in the parent folder:
 After proper calibration and obtained WCS solutions, photometry is measured using Photutils package defining apertures by either the fixed FWHM or the FWHM that can vary from image to image in the following way: 
 
     ifFWHMvariable=False # for fixied value of FWHM and ifFWHMvariable=True to enable variation on FWHM
-    ifBadPixels=False # Defects like cosmic rays and hot/dead pixels are removed if ifBadPixels=True or ifBadPixel=False the correction is omitted (default value).
 
 Radis for aperture photometry is 2.8*FWHM, annulus radius starting 5 pixels away from the aperture radius and spanning for 10 pixels. 
 
+Cosmic rays and hot/dead pixels are not corrected by default, since this process is time consuming, so by default the keyword:
+
+    ifBadPixels=False
+
+If such correction is required, ifBadPixels should be set to True: ifBadPixels=True.
+ 
 --------------------------------------------------------------------------------------------------
 
 reuce02.py
