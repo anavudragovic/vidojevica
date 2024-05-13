@@ -1,6 +1,6 @@
 # vidojevica
 
- reduce_v10.py and reduce_v10_astrometry.py
+ reduce_v10.py & reduce_v10_astrometry.py
 
 Both reduce_v10.py and reduce_v10_astrometry.py reduce CCD images taken with Milankovic telescope mounted at the Astronomical Station Vidojevica. The difference is in obtaining the astrometrical solution: the first one uses python package twirl and the second one uses external sowtware Astrometry. 
 
