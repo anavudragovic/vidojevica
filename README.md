@@ -10,10 +10,12 @@ Three folders are created in the parent folder:
     2. astrometry # To store astrometrically solved calibrated images
     3. photometry # To store output tables with measured photometry
 
-After proper calibration and obtained WCS solutions, photometry is measured using Photutils package defining apertures by either the fixed FWHM or the FWHM that can vary from image to image in the following way: aperture radius is 2.8*FWHM, annulus radius starting 5 pixels away from the aperture radius and spanning for 10 pixels. 
+After proper calibration and obtained WCS solutions, photometry is measured using Photutils package defining apertures by either the fixed FWHM or the FWHM that can vary from image to image in the following way: 
 
     ifFWHMvariable=False # for fixied value of FWHM and ifFWHMvariable=True to enable variation on FWHM
     ifBadPixels=False # Defects like cosmic rays and hot/dead pixels are removed if ifBadPixels=True or ifBadPixel=False the correction is omitted (default value).
+
+Radis for aperture photometry is 2.8*FWHM, annulus radius starting 5 pixels away from the aperture radius and spanning for 10 pixels. 
 
 --------------------------------------------------------------------------------------------------
 
